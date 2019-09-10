@@ -3,6 +3,7 @@
  - **chooseOne** is a function which can randomly choose a card
  - **autoDiscard** is a function which can automatically discard
 */
+import UIKit
 var cards = [(1,"spade"),(2,"spade"),(3,"spade"),(4,"spade"),(5,"spade"),(6,"spade"),(7,"spade"),(8,"spade"),(9,"spade"),(10,"spade"),(11,"spade"),(12,"spade"),(13,"spade"),
              
              (1,"heart"),(2,"heart"),(3,"heart"),(4,"heart"),(5,"heart"),(6,"heart"),(7,"heart"),(8,"heart"),(9,"heart"),(10,"heart"),(11,"heart"),(12,"heart"),(13,"heart"),
@@ -15,7 +16,8 @@ var cards = [(1,"spade"),(2,"spade"),(3,"spade"),(4,"spade"),(5,"spade"),(6,"spa
 var num : Int = 51
 
 func chooseOne() -> (num : Int, color : String){
-    let i : Int = Int.random(in: 0...num)
+    //let i : Int = Int.random(in: 0...num)
+    let i = Int(arc4random_uniform(UInt32(num+1)))
     if num > 0{
         let t = cards[num]
         cards[num] = cards[i]
