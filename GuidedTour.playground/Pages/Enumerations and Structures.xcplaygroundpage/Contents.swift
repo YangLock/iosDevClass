@@ -26,7 +26,7 @@ let ace = Rank.Ace
 let aceRawValue = ace.rawValue
 
 
-
+print(ace)
 print(Rank.Jack.rawValue)
 
 //: - Experiment: Write a function that compares two `Rank` values by comparing their raw values.

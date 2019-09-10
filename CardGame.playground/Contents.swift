@@ -13,16 +13,15 @@ var cards = [(1,"spade"),(2,"spade"),(3,"spade"),(4,"spade"),(5,"spade"),(6,"spa
 
 
 var num : Int = 51
-let number: Int = 51
 
 func chooseOne() -> (num : Int, color : String){
     let i : Int = Int.random(in: 0...num)
     if num > 0{
-        num = num - 1;
-        let t = cards[number]
-        cards[number] = cards[i]
+        let t = cards[num]
+        cards[num] = cards[i]
         cards[i] = t
-        return cards[number]
+        num = num - 1
+        return cards[num]
     }else{
         print("All the cards have been discarded!")
         return (0,"none")
@@ -44,3 +43,4 @@ autoDiscard(numOfPlayers: 5, numOfCards: 4)
 for i in 0..<5 {
     print(cardsOfPlayers[i])
 }
+
