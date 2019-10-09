@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cTl-Sr-Vyy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--设置-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="myProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="设置" image="gear" catalog="system" id="UY2-hJ-RcB"/>
+                    <navigationItem key="navigationItem" id="wNM-dG-6FL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="556"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="eXw-2q-a3Y">
+            <objects>
+                <viewController id="BcN-Re-6jF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nxi-Ux-Ktc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="c0Y-NN-Cww"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="WqN-50-PuD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8I-ul-9O5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="633"/>
+        </scene>
+        <!--创建日程-->
+        <scene sceneID="kAu-Je-VWd">
+            <objects>
+                <viewController title="创建日程" id="ber-Lu-yND" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MWQ-Ri-Iaf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建日程" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smb-UY-490">
+                                <rect key="frame" x="172" y="11" width="70" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f89-J9-Sh2">
+                                <rect key="frame" x="20" y="11" width="17" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="chevron.left" catalog="system"/>
+                                <connections>
+                                    <segue destination="izz-8Z-gmX" kind="unwind" unwindAction="exitToHereWithSegue:" id="FKa-cQ-aWF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYB-v4-Yc0">
+                                <rect key="frame" x="20" y="238" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="smb-UY-490" firstAttribute="centerX" secondItem="MWQ-Ri-Iaf" secondAttribute="centerX" id="ORG-xW-ANb"/>
+                            <constraint firstItem="smb-UY-490" firstAttribute="top" secondItem="PbT-3T-XTh" secondAttribute="top" constant="11" id="Sfh-u3-Hf5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PbT-3T-XTh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="LbR-vV-0Vh"/>
+                    <navigationItem key="navigationItem" id="kPF-pZ-Bti"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydW-hO-lob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="izz-8Z-gmX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2063.768115942029" y="-13.392857142857142"/>
+        </scene>
+        <!--日程安排-->
+        <scene sceneID="lm3-TO-fw4">
+            <objects>
+                <viewController id="mmC-j1-N0a" customClass="ScheduleViewController" customModule="myProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MhL-dv-Snq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtE-Cp-VYi">
+                                <rect key="frame" x="320" y="728.5" width="74" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="plus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="ber-Lu-yND" kind="show" id="SsW-iJ-3Kt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4d4-Ts-6F8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="日程安排" image="calendar" catalog="system" id="dQ9-WP-Ubm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5e-Id-4pd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="-13.392857142857142"/>
+        </scene>
+        <!--待办事项-->
+        <scene sceneID="11T-pQ-kcR">
+            <objects>
+                <viewController id="WPw-Lj-9s3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c4A-eW-IOO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="D71-tx-cNQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="待办事项" image="checkmark.rectangle.fill" catalog="system" id="6d5-aT-IYj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmj-6L-KEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="-604"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LtD-mh-ZPV">
+            <objects>
+                <tabBarController id="cTl-Sr-Vyy" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="17D-yu-Rit">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WPw-Lj-9s3" kind="relationship" relationship="viewControllers" id="Epc-Y7-nfP"/>
+                        <segue destination="mmC-j1-N0a" kind="relationship" relationship="viewControllers" id="ra2-Ce-eKL"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="G34-mZ-Geq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TdC-iG-UFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1552" y="-13"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
