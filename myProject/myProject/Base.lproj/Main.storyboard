@@ -28,18 +28,86 @@
         <!--Item 2-->
         <scene sceneID="eXw-2q-a3Y">
             <objects>
-                <viewController id="BcN-Re-6jF" sceneMemberID="viewController">
+                <viewController id="BcN-Re-6jF" customClass="DetailOfThingsViewController" customModule="myProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxi-Ux-Ktc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="任务描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v57-LW-c1x">
+                                <rect key="frame" x="20" y="416" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="预计完成日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Ud-Y2B">
+                                <rect key="frame" x="20" y="287" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcU-bp-Vgm">
+                                <rect key="frame" x="20" y="335" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="任务名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-wN-TFx">
+                                <rect key="frame" x="20" y="109" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ax-a2-sTg">
+                                <rect key="frame" x="20" y="152" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="描述" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v0b-in-aQw">
+                                <rect key="frame" x="16" y="467" width="383" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYU-uV-bTA">
+                                <rect key="frame" x="55" y="720" width="43" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="J7c-tS-2pU" kind="unwind" identifier="saveToTask" unwindAction="saveToTaskWithSegue:" id="6hr-bk-JPq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgC-Pn-KYT">
+                                <rect key="frame" x="289" y="722" width="61" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancle"/>
+                                <connections>
+                                    <segue destination="J7c-tS-2pU" kind="unwind" identifier="cancleToTask" unwindAction="cancleToTaskWithSegue:" id="noA-84-sy8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="c0Y-NN-Cww"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="WqN-50-PuD"/>
+                    <navigationItem key="navigationItem" id="gUB-Go-4Ub"/>
+                    <connections>
+                        <outlet property="detail" destination="v0b-in-aQw" id="YoS-P8-32G"/>
+                        <outlet property="name" destination="4ax-a2-sTg" id="dOp-wo-qvE"/>
+                        <outlet property="toFinishDate" destination="ZcU-bp-Vgm" id="IKm-gA-Mek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8I-ul-9O5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="J7c-tS-2pU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="633"/>
+            <point key="canvasLocation" x="2011.594202898551" y="-688.39285714285711"/>
         </scene>
         <!--创建日程-->
         <scene sceneID="kAu-Je-VWd">
@@ -83,7 +151,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydW-hO-lob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="izz-8Z-gmX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2063.768115942029" y="-13.392857142857142"/>
+            <point key="canvasLocation" x="2012" y="-13"/>
         </scene>
         <!--日程安排-->
         <scene sceneID="lm3-TO-fw4">
@@ -98,7 +166,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="plus.circle.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="ber-Lu-yND" kind="show" id="SsW-iJ-3Kt"/>
+                                    <segue destination="ber-Lu-yND" kind="show" id="Swa-hV-xqw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,21 +179,54 @@
             </objects>
             <point key="canvasLocation" x="879.71014492753625" y="-13.392857142857142"/>
         </scene>
-        <!--待办事项-->
-        <scene sceneID="11T-pQ-kcR">
+        <!--代办列表-->
+        <scene sceneID="o4q-lP-Z1K">
             <objects>
-                <viewController id="WPw-Lj-9s3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c4A-eW-IOO">
+                <tableViewController id="MgK-Pi-lSg" customClass="ToDoListTableTableViewController" customModule="myProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QoC-wx-vUc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="D71-tx-cNQ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="待办事项" image="checkmark.rectangle.fill" catalog="system" id="6d5-aT-IYj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lmj-6L-KEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" id="A7N-mo-OiO">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A7N-mo-OiO" id="di6-IP-zUs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BcN-Re-6jF" kind="show" id="bf7-1F-drz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MgK-Pi-lSg" id="grv-LS-N1I"/>
+                            <outlet property="delegate" destination="MgK-Pi-lSg" id="lQN-cG-stI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="代办列表" id="mPZ-0s-hh9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CbR-4q-p4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-188" y="-604"/>
+            <point key="canvasLocation" x="970" y="-688"/>
+        </scene>
+        <!--待办事项-->
+        <scene sceneID="oCV-Pq-cTH">
+            <objects>
+                <navigationController id="4Ud-rf-hTo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="待办事项" image="checkmark.square.fill" catalog="system" id="s2W-0e-sIv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Edz-dW-tdq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MgK-Pi-lSg" kind="relationship" relationship="rootViewController" id="im5-kk-729"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QdL-CA-7s2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="-688"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LtD-mh-ZPV">
@@ -137,7 +238,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="WPw-Lj-9s3" kind="relationship" relationship="viewControllers" id="Epc-Y7-nfP"/>
+                        <segue destination="4Ud-rf-hTo" kind="relationship" relationship="viewControllers" id="Egp-dW-yyR"/>
                         <segue destination="mmC-j1-N0a" kind="relationship" relationship="viewControllers" id="ra2-Ce-eKL"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="G34-mZ-Geq"/>
                     </connections>
@@ -149,7 +250,7 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
+        <image name="checkmark.square.fill" catalog="system" width="64" height="56"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
