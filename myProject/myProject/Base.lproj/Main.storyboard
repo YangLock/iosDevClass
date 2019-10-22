@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-188" y="556"/>
+            <point key="canvasLocation" x="-228" y="973"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="eXw-2q-a3Y">
@@ -34,14 +34,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="任务描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v57-LW-c1x">
-                                <rect key="frame" x="20" y="416" width="70" height="21"/>
+                                <rect key="frame" x="20" y="477" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="预计完成日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Ud-Y2B">
-                                <rect key="frame" x="20" y="287" width="104" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="执行日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-Ud-Y2B">
+                                <rect key="frame" x="20" y="287" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -67,37 +67,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="描述" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v0b-in-aQw">
-                                <rect key="frame" x="16" y="467" width="383" height="220"/>
+                                <rect key="frame" x="16" y="506" width="383" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYU-uV-bTA">
-                                <rect key="frame" x="55" y="720" width="43" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <segue destination="J7c-tS-2pU" kind="unwind" identifier="saveToTask" unwindAction="saveToTaskWithSegue:" id="6hr-bk-JPq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgC-Pn-KYT">
-                                <rect key="frame" x="289" y="722" width="61" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Cancle"/>
-                                <connections>
-                                    <segue destination="J7c-tS-2pU" kind="unwind" identifier="cancleToTask" unwindAction="cancleToTaskWithSegue:" id="noA-84-sy8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="c0Y-NN-Cww"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="WqN-50-PuD"/>
-                    <navigationItem key="navigationItem" id="gUB-Go-4Ub"/>
+                    <navigationItem key="navigationItem" id="gUB-Go-4Ub">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="9Qn-gt-I4H">
+                            <connections>
+                                <segue destination="J7c-tS-2pU" kind="unwind" identifier="saveToTask" unwindAction="saveToTaskWithSegue:" id="cgU-bi-9jv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detail" destination="v0b-in-aQw" id="YoS-P8-32G"/>
                         <outlet property="name" destination="4ax-a2-sTg" id="dOp-wo-qvE"/>
@@ -109,51 +97,7 @@
             </objects>
             <point key="canvasLocation" x="2011.594202898551" y="-688.39285714285711"/>
         </scene>
-        <!--创建日程-->
-        <scene sceneID="kAu-Je-VWd">
-            <objects>
-                <viewController title="创建日程" id="ber-Lu-yND" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MWQ-Ri-Iaf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建日程" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smb-UY-490">
-                                <rect key="frame" x="172" y="11" width="70" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f89-J9-Sh2">
-                                <rect key="frame" x="20" y="11" width="17" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="chevron.left" catalog="system"/>
-                                <connections>
-                                    <segue destination="izz-8Z-gmX" kind="unwind" unwindAction="exitToHereWithSegue:" id="FKa-cQ-aWF"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYB-v4-Yc0">
-                                <rect key="frame" x="20" y="238" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="smb-UY-490" firstAttribute="centerX" secondItem="MWQ-Ri-Iaf" secondAttribute="centerX" id="ORG-xW-ANb"/>
-                            <constraint firstItem="smb-UY-490" firstAttribute="top" secondItem="PbT-3T-XTh" secondAttribute="top" constant="11" id="Sfh-u3-Hf5"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="PbT-3T-XTh"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="LbR-vV-0Vh"/>
-                    <navigationItem key="navigationItem" id="kPF-pZ-Bti"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ydW-hO-lob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="izz-8Z-gmX" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2012" y="-13"/>
-        </scene>
-        <!--日程安排-->
+        <!--Schedule View Controller-->
         <scene sceneID="lm3-TO-fw4">
             <objects>
                 <viewController id="mmC-j1-N0a" customClass="ScheduleViewController" customModule="myProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,18 +110,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="plus.circle.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="ber-Lu-yND" kind="show" id="Swa-hV-xqw"/>
+                                    <segue destination="BcN-Re-6jF" kind="show" id="Y72-Xg-PdA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4d4-Ts-6F8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="日程安排" image="calendar" catalog="system" id="dQ9-WP-Ubm"/>
+                    <navigationItem key="navigationItem" id="NEm-Yh-JjW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5e-Id-4pd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879.71014492753625" y="-13.392857142857142"/>
+            <point key="canvasLocation" x="970" y="21"/>
         </scene>
         <!--代办列表-->
         <scene sceneID="o4q-lP-Z1K">
@@ -205,7 +149,13 @@
                             <outlet property="delegate" destination="MgK-Pi-lSg" id="lQN-cG-stI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="代办列表" id="mPZ-0s-hh9"/>
+                    <navigationItem key="navigationItem" title="代办列表" id="mPZ-0s-hh9">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="kfd-4H-ENl">
+                            <connections>
+                                <segue destination="BcN-Re-6jF" kind="show" id="MQD-NV-BeM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbR-4q-p4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,7 +189,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="4Ud-rf-hTo" kind="relationship" relationship="viewControllers" id="Egp-dW-yyR"/>
-                        <segue destination="mmC-j1-N0a" kind="relationship" relationship="viewControllers" id="ra2-Ce-eKL"/>
+                        <segue destination="1db-cW-40L" kind="relationship" relationship="viewControllers" id="ra2-Ce-eKL"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="G34-mZ-Geq"/>
                     </connections>
                 </tabBarController>
@@ -247,12 +197,33 @@
             </objects>
             <point key="canvasLocation" x="-1552" y="-13"/>
         </scene>
+        <!--日程安排-->
+        <scene sceneID="XHV-R7-DcW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1db-cW-40L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="日程安排" image="calendar" catalog="system" id="dQ9-WP-Ubm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hVa-aA-ZA2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mmC-j1-N0a" kind="relationship" relationship="rootViewController" id="gy7-Yf-oDL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ei-Wm-5KD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="21"/>
+        </scene>
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="checkmark.square.fill" catalog="system" width="64" height="56"/>
-        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Y72-Xg-PdA"/>
+    </inferredMetricsTieBreakers>
 </document>
