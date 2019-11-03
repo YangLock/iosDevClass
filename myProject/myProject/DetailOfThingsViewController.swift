@@ -13,15 +13,20 @@ class DetailOfThingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.name.text = taskEdit?.taskName
-        self.toFinishDate.text = taskEdit?.taskToFinishDate
-        self.detail.text = taskEdit?.taskDetail
+        self.taskname.text = taskEdit?.taskName
+        self.yearInput.text = taskEdit?.yearOfDate
+        self.monthInput.text = taskEdit?.monthOfDate
+        self.dayInput.text = taskEdit?.dayOfDate
+        self.detailInput.text = taskEdit?.taskDetail
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var toFinishDate: UITextField!
-    @IBOutlet weak var detail: UITextView!
+    @IBOutlet weak var taskname: UITextField!
+    @IBOutlet weak var yearInput: UITextField!
+    @IBOutlet weak var monthInput: UITextField!
+    @IBOutlet weak var dayInput: UITextField!
+    @IBOutlet weak var detailInput: UITextView!
+    
     
     
     // MARK: - Navigation
@@ -33,7 +38,7 @@ class DetailOfThingsViewController: UIViewController {
         if segue.identifier == "saveToTask"
         {
             print("saving")
-            taskEdit = Task(taskName: self.name.text!, taskToFinishDate: self.toFinishDate.text!, taskDetail: self.detail.text!)
+            taskEdit = Task(name: self.taskname.text!, year: self.yearInput.text!, month: self.monthInput.text!, day: self.dayInput.text!, detail: self.detailInput.text!)
         }
         
         if segue.identifier == "cancleToTask"

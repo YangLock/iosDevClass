@@ -15,6 +15,7 @@
 		5718ADE423559DA70056BA72 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5718ADE323559DA70056BA72 /* TableViewController.swift */; };
 		5718ADE62355A38A0056BA72 /* food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5718ADE52355A38A0056BA72 /* food.swift */; };
 		5718ADE82355A9840056BA72 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5718ADE72355A9840056BA72 /* NextViewController.swift */; };
+		579E98982368163F0046254F /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579E98972368163F0046254F /* FoodTableViewCell.swift */; };
 		57BEB6F4234C6F2100806A67 /* ReturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BEB6F3234C6F2100806A67 /* ReturnViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		5718ADE323559DA70056BA72 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5718ADE52355A38A0056BA72 /* food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = food.swift; sourceTree = "<group>"; };
 		5718ADE72355A9840056BA72 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		579E98972368163F0046254F /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		57BEB6F3234C6F2100806A67 /* ReturnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				302CEB09231513D400A7A607 /* AppDelegate.swift */,
 				302CEB0B231513D400A7A607 /* ViewController.swift */,
 				302CEB0D231513D400A7A607 /* Main.storyboard */,
+				579E98972368163F0046254F /* FoodTableViewCell.swift */,
 				5718ADE72355A9840056BA72 /* NextViewController.swift */,
 				5718ADE52355A38A0056BA72 /* food.swift */,
 				5718ADE323559DA70056BA72 /* TableViewController.swift */,
@@ -153,6 +156,7 @@
 				302CEB0C231513D400A7A607 /* ViewController.swift in Sources */,
 				5718ADE82355A9840056BA72 /* NextViewController.swift in Sources */,
 				302CEB0A231513D400A7A607 /* AppDelegate.swift in Sources */,
+				579E98982368163F0046254F /* FoodTableViewCell.swift in Sources */,
 				57BEB6F4234C6F2100806A67 /* ReturnViewController.swift in Sources */,
 				5718ADE423559DA70056BA72 /* TableViewController.swift in Sources */,
 				5718ADE62355A38A0056BA72 /* food.swift in Sources */,

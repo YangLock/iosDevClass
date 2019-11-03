@@ -70,6 +70,7 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.rowHeight = 120
     }
 
     // MARK: - Table view data source
@@ -87,11 +88,13 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "foodcell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodcell", for: indexPath) as! FoodTableViewCell
 
         // Configure the cell...
 
-        cell.textLabel?.text = foodList[indexPath.row].food_name
+        cell.foodImage.image = foodList[indexPath.row].food_avatar
+        cell.foodName.text = foodList[indexPath.row].food_name
+        cell.foodPrice.text = foodList[indexPath.row].food_price
         return cell
         
     }

@@ -14,8 +14,30 @@ class ToDoListTableTableViewController: UITableViewController {
     // initialize the task list
     func initTaskList()
     {
-        taskList.append(Task(taskName: "完成省创数据报告", taskToFinishDate: "2019.10.29", taskDetail: "太难了，不会写啊"))
-        taskList.append(Task(taskName: "学习机器学习", taskToFinishDate: "2019.10.28", taskDetail: "太难了"))
+        if let list = loadTaskFile()
+        {
+            taskList = list
+        }
+        else
+        {
+            print("tasklist is empty")
+        }
+    }
+    
+    // 将任务列表中的内容保存在文件中
+    func saveTaskFile()
+    {
+        let success = NSKeyedArchiver.archiveRootObject(taskList, toFile: Task.ArchiveURL.path)
+        if !success
+        {
+            print("Failed...")
+        }
+    }
+    
+    // 获取文件中的内容
+    func loadTaskFile() -> [Task]?
+    {
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: Task.ArchiveURL.path) as? [Task])
     }
     
     // create the action when click the button in detail
@@ -84,17 +106,19 @@ class ToDoListTableTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            taskList.remove(at: indexPath.row)
+            saveTaskFile()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
