@@ -16,6 +16,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var currentYear = Calendar.current.component(.year, from: Date())
     var currentMonth = Calendar.current.component(.month, from: Date())
+    var currentDay = Calendar.current.component(.day, from: Date())
+    
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "Sepetember", "October", "November", "December"]
     
     var numberOfDaysInThisMonth: Int
@@ -104,6 +106,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             else
             {
                 textLabel.text = "\(indexPath.row + 1 - howManyItemsShouldAdd)"
+                if textLabel.text == "\(currentDay)" && timeLabel.text == months[currentMonth - 1] + " \(currentYear)"
+                {
+                    textLabel.textColor = UIColor(displayP3Red: 0.6, green: 0.5, blue: 0.3, alpha: 1)
+                }
             }
         }
         return cell
@@ -118,13 +124,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return 0
     }
    
-    func collectionView(_ collectionView: UICollectionView, layoutcollectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let width = collectionView.frame.width / 7
+        let width = (collectionView.frame.width) / 7
         return CGSize(width: width, height: 40)
     }
     
-
+    
     override func viewWillLayoutSubviews()
     {
         super.viewWillLayoutSubviews()
