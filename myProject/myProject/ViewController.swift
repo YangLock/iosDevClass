@@ -110,6 +110,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             if indexPath.row < howManyItemsShouldAdd
             {
                 textLabel.text! = " "
+                cell.backgroundColor = UIColor.darkGray
             }
             else
             {
@@ -117,15 +118,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 if textLabel.text! == "\(currentDay)" && timeLabel.text! == months[stableCurrentMonth - 1] + " \(stableCurrentYear)"
                 {
                     cell.layer.cornerRadius = 20
+                    
                     cell.backgroundColor = UIColor(displayP3Red: 0.5, green: 0.3, blue: 0.3, alpha: 1)
-//                    textLabel.backgroundColor = UIColor(displayP3Red: 0.5, green: 0.3, blue: 0.3, alpha: 1)
+                    print(indexPath.row)
+                    
                 }
-                
-                print(timeLabel.text!)
-                print(indexPath.row)
-                print(textLabel.text!)
-                print(textLabel.text! == "\(currentDay)" && timeLabel.text! == months[stableCurrentMonth - 1] + " \(stableCurrentYear)")
-                print("---------------")
+                else
+                {
+                    cell.backgroundColor = UIColor.darkGray
+                }
             }
         }
         return cell
