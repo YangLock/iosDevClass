@@ -65,6 +65,7 @@ class ToDoListTableTableViewController: UITableViewController {
                 }
             }
         }
+        saveTaskFile()
     }
     
     override func viewDidLoad() {
