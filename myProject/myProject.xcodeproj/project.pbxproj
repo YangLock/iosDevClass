@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		572049CB234E1C0700B3AFC2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572049CA234E1C0700B3AFC2 /* ScheduleViewController.swift */; };
+		57CC0C542383CFB800D21659 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC0C532383CFB800D21659 /* UserInformationViewController.swift */; };
+		57CC0C562383D41600D21659 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC0C552383D41600D21659 /* userInfo.swift */; };
 		57F6442D235C0036007D2F03 /* ToDoListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F6442C235C0036007D2F03 /* ToDoListTableTableViewController.swift */; };
 		57F6442F235C00CB007D2F03 /* DetailOfThingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F6442E235C00CB007D2F03 /* DetailOfThingsViewController.swift */; };
 		57F64431235C0799007D2F03 /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F64430235C0799007D2F03 /* task.swift */; };
@@ -18,6 +20,7 @@
 		57FA77662339F0EE00EA727C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FA77642339F0EE00EA727C /* LaunchScreen.storyboard */; };
 		57FA77712339F0EE00EA727C /* myProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA77702339F0EE00EA727C /* myProjectTests.swift */; };
 		57FA777C2339F0EE00EA727C /* myProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA777B2339F0EE00EA727C /* myProjectUITests.swift */; };
+		57FB2A23237CFB50006CC5F6 /* settingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB2A22237CFB50006CC5F6 /* settingPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		572049CA234E1C0700B3AFC2 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		57CC0C532383CFB800D21659 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
+		57CC0C552383D41600D21659 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		57F6442C235C0036007D2F03 /* ToDoListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableTableViewController.swift; sourceTree = "<group>"; };
 		57F6442E235C00CB007D2F03 /* DetailOfThingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfThingsViewController.swift; sourceTree = "<group>"; };
 		57F64430235C0799007D2F03 /* task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		57FA77772339F0EE00EA727C /* myProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FA777B2339F0EE00EA727C /* myProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProjectUITests.swift; sourceTree = "<group>"; };
 		57FA777D2339F0EE00EA727C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57FB2A22237CFB50006CC5F6 /* settingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,9 @@
 				57FA775B2339F0E600EA727C /* AppDelegate.swift */,
 				57FA775D2339F0E600EA727C /* ViewController.swift */,
 				57FA775F2339F0E600EA727C /* Main.storyboard */,
+				57CC0C532383CFB800D21659 /* UserInformationViewController.swift */,
+				57FB2A22237CFB50006CC5F6 /* settingPageViewController.swift */,
+				57CC0C552383D41600D21659 /* userInfo.swift */,
 				57F64430235C0799007D2F03 /* task.swift */,
 				57F6442E235C00CB007D2F03 /* DetailOfThingsViewController.swift */,
 				57F6442C235C0036007D2F03 /* ToDoListTableTableViewController.swift */,
@@ -270,10 +279,13 @@
 			files = (
 				572049CB234E1C0700B3AFC2 /* ScheduleViewController.swift in Sources */,
 				57FA775E2339F0E600EA727C /* ViewController.swift in Sources */,
+				57CC0C542383CFB800D21659 /* UserInformationViewController.swift in Sources */,
 				57F6442F235C00CB007D2F03 /* DetailOfThingsViewController.swift in Sources */,
 				57F6442D235C0036007D2F03 /* ToDoListTableTableViewController.swift in Sources */,
 				57F64431235C0799007D2F03 /* task.swift in Sources */,
+				57FB2A23237CFB50006CC5F6 /* settingPageViewController.swift in Sources */,
 				57FA775C2339F0E600EA727C /* AppDelegate.swift in Sources */,
+				57CC0C562383D41600D21659 /* userInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

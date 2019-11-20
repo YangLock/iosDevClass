@@ -118,10 +118,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 if textLabel.text! == "\(currentDay)" && timeLabel.text! == months[stableCurrentMonth - 1] + " \(stableCurrentYear)"
                 {
                     cell.layer.cornerRadius = 20
-                    
                     cell.backgroundColor = UIColor(displayP3Red: 0.5, green: 0.3, blue: 0.3, alpha: 1)
-                    print(indexPath.row)
-                    
                 }
                 else
                 {
