@@ -26,6 +26,7 @@ class UserInformationViewController: UIViewController, UINavigationControllerDel
         self.avatar.layer.cornerRadius = self.avatar.frame.height / 2
         self.avatar.layer.masksToBounds = true
         // Do any additional setup after loading the view.
+        self.view.layer.contents = UIImage(named: "background1.jpg")?.cgImage
     }
     
     // 按钮点击事件

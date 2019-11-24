@@ -8,11 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+{
     
     @IBOutlet weak var calendar: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var TableView: UITableView!
+    
+    // 全部任务
+    var taskList = [Task]()
+    // 选中日期当天的任务
+    var taskListOfSelect = [Task]()
+    
+    // 获取选中日期
+    var selectDay: String?
+    var selectMonthYear: String?
     
     // 获取当前的月份、日期和年份，并且会随着点击切换月份的按钮而改变
     var currentYear = Calendar.current.component(.year, from: Date())
@@ -152,6 +162,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.cellForItem(at: indexPath)
         cell!.layer.cornerRadius = 20
         cell?.backgroundColor = UIColor.gray
+        if let textLabel = cell?.contentView.subviews[0] as? UILabel
+        {
+            selectDay = textLabel.text
+            selectMonthYear = self.timeLabel.text
+            clickToDisplay()
+        }
     }
     
     // cell非选中下解除所有效果
@@ -172,4 +188,85 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    // 将任务列表中的内容保存在文件中
+    func saveTaskFile()
+    {
+        let success = NSKeyedArchiver.archiveRootObject(taskList, toFile: Task.ArchiveURL.path)
+        if !success
+        {
+            print("Failed!!!")
+        }
+    }
+    
+    // 获取文件中的内容
+    func loadTaskfile() -> [Task]?
+    {
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: Task.ArchiveURL.path) as? [Task])
+    }
+    
+    // 初始化任务列表
+    func initTaskList()
+    {
+        if let list = loadTaskfile()
+        {
+            taskList = list
+        }
+    }
+    
+    // 获取当天任务
+    func getTodayList()
+    {
+        var listOfSelectDay = [Task]()
+        for index in 0..<taskList.count
+        {
+            let monthYear = months[Int(taskList[index].monthOfDate!)! - 1] + " " + taskList[index].yearOfDate!
+            
+            if monthYear == selectMonthYear && taskList[index].dayOfDate == selectDay
+            {
+                listOfSelectDay.append(taskList[index])
+            }
+        }
+        
+        taskListOfSelect = listOfSelectDay
+    }
+    
+    // 点击日期来显示数据
+    func clickToDisplay()
+    {
+        TableView.delegate = self
+        TableView.dataSource = self
+        initTaskList()
+        getTodayList()
+        TableView.reloadData()
+    }
+    
+    // tableView的控制器
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return taskListOfSelect.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todayTask", for: indexPath)
+        cell.textLabel?.text = taskListOfSelect[indexPath.row].taskName
+        return cell
+    }
+    
+    // 传输数据到detail界面
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let detailVC = segue.destination as! DetailOfThingsViewController
+        if let selectedCell = sender as? UITableViewCell
+        {
+            let indexPath = TableView.indexPath(for: selectedCell)!
+            let selectedTask = taskListOfSelect[(indexPath as NSIndexPath).row]
+            detailVC.taskEdit = selectedTask
+        }
+    }
 }

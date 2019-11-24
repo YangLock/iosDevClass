@@ -74,7 +74,9 @@ class settingPageViewController: UIViewController
         
         UserInfoAvatar.layer.cornerRadius = UserInfoAvatar.frame.size.height / 2
         UserInfoAvatar.layer.masksToBounds = true
-        // Do any additional setup after loading the view.
+        
+        // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background1.jpg")!)
+        self.view.layer.contents = UIImage(named: "background1.jpg")?.cgImage
     }
     
 
