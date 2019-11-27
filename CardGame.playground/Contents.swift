@@ -46,3 +46,9 @@ for i in 0..<5 {
     print(cardsOfPlayers[i])
 }
 
+
+let monthYear = "March 2019"
+var month = monthYear.components(separatedBy: " ")[0]
+var year = monthYear.components(separatedBy: " ")[1]
+print(month)
+print(year)

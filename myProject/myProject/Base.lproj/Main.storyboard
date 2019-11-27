@@ -522,6 +522,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BcN-Re-6jF" kind="show" id="wsq-9I-ICj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -548,7 +551,7 @@
                     <navigationItem key="navigationItem" title="日程表" id="NEm-Yh-JjW">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="lmv-Rm-njx">
                             <connections>
-                                <segue destination="BcN-Re-6jF" kind="show" id="bSe-mW-kF1"/>
+                                <action selector="addTask:" destination="mmC-j1-N0a" id="kWc-ZW-a33"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -556,6 +559,7 @@
                         <outlet property="TableView" destination="DSy-ar-YGI" id="PSS-Be-nm9"/>
                         <outlet property="calendar" destination="mg5-7G-c4X" id="FFo-dy-qd0"/>
                         <outlet property="timeLabel" destination="KlV-I6-gh3" id="kxX-oe-EZz"/>
+                        <segue destination="BcN-Re-6jF" kind="show" identifier="addTask" id="QyP-fy-RA9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5e-Id-4pd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -683,6 +687,6 @@
         <image name="touxiang.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bSe-mW-kF1"/>
+        <segue reference="QyP-fy-RA9"/>
     </inferredMetricsTieBreakers>
 </document>

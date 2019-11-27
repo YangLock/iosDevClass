@@ -15,10 +15,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var TableView: UITableView!
     
+    @IBAction func addTask(_ sender: Any)
+    {
+        self.performSegue(withIdentifier: "addTask", sender: self)
+    }
+    
     // 全部任务
     var taskList = [Task]()
     // 选中日期当天的任务
     var taskListOfSelect = [Task]()
+    
+    var tempTask: Task?
     
     // 获取选中日期
     var selectDay: String?
@@ -166,6 +173,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         {
             selectDay = textLabel.text
             selectMonthYear = self.timeLabel.text
+            var month = selectMonthYear?.components(separatedBy: " ")[0]
+            var year = selectMonthYear?.components(separatedBy: " ")[1]
+            var tempMonth: Int = 0
+            for index in 0..<months.count
+            {
+                if months[index] == month
+                {
+                    tempMonth = index + 1
+                }
+            }
+            
+            tempTask = Task(name: "", year: year, month: String(tempMonth), day: selectDay, detail: "")
             clickToDisplay()
         }
     }
@@ -261,12 +280,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // 传输数据到detail界面
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        let detailVC = segue.destination as! DetailOfThingsViewController
-        if let selectedCell = sender as? UITableViewCell
+        if segue.identifier == "addTask"
         {
-            let indexPath = TableView.indexPath(for: selectedCell)!
-            let selectedTask = taskListOfSelect[(indexPath as NSIndexPath).row]
-            detailVC.taskEdit = selectedTask
+            let addTaskVC = segue.destination as! DetailOfThingsViewController
+            addTaskVC.taskEdit = tempTask
+        }
+        else
+        {
+            let detailVC = segue.destination as! DetailOfThingsViewController
+            if let selectedCell = sender as? UITableViewCell
+            {
+                let indexPath = TableView.indexPath(for: selectedCell)!
+                let selectedTask = taskListOfSelect[(indexPath as NSIndexPath).row]
+                detailVC.taskEdit = selectedTask
+            }
         }
     }
 }

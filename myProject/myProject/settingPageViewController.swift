@@ -50,6 +50,8 @@ class settingPageViewController: UIViewController
             if let editUserInfo = editUserVC.userEdit
             {
                 user = editUserInfo
+                UserInfoAvatar.image = user?.userAvatar
+                UserInfoNickName.text = user?.userName
             }
         }
         saveUserInfoFile()
