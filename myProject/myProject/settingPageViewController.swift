@@ -63,8 +63,15 @@ class settingPageViewController: UIViewController
         super.viewDidLoad()
         initUserInfo()
         
-        UserInfoAvatar.image = user?.userAvatar
-        UserInfoNickName.text = user?.userName
+        if user == nil
+        {
+            
+        }
+        else
+        {
+            UserInfoAvatar.image = user?.userAvatar
+            UserInfoNickName.text = user?.userName
+        }
         
         themeView.layer.cornerRadius = 10
         themeView.layer.borderWidth = 1

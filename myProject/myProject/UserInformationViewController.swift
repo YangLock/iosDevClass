@@ -20,8 +20,16 @@ class UserInformationViewController: UIViewController, UINavigationControllerDel
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.avatar.image = userEdit?.userAvatar
-        self.nickName.text = userEdit?.userName
+        
+        if userEdit == nil
+        {
+            
+        }
+        else
+        {
+            self.avatar.image = userEdit?.userAvatar
+            self.nickName.text = userEdit?.userName
+        }
         
         self.avatar.layer.cornerRadius = self.avatar.frame.height / 2
         self.avatar.layer.masksToBounds = true

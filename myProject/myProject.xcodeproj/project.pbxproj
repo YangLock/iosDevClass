@@ -10,6 +10,11 @@
 		572049CB234E1C0700B3AFC2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572049CA234E1C0700B3AFC2 /* ScheduleViewController.swift */; };
 		5733AEB323867A4E007DC68C /* background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5733AEB223867A4E007DC68C /* background1.jpg */; };
 		5733AEB623869F08007DC68C /* touxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = 5733AEB523869F07007DC68C /* touxiang.png */; };
+		5793216323964502005EDAFB /* displayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5793216223964502005EDAFB /* displayViewController.swift */; };
+		5793216723964653005EDAFB /* rili.png in Resources */ = {isa = PBXBuildFile; fileRef = 5793216423964653005EDAFB /* rili.png */; };
+		5793216823964653005EDAFB /* task.png in Resources */ = {isa = PBXBuildFile; fileRef = 5793216523964653005EDAFB /* task.png */; };
+		5793216923964653005EDAFB /* miaoshu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5793216623964653005EDAFB /* miaoshu.png */; };
+		5793216C239676C4005EDAFB /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 5793216B239676C4005EDAFB /* white.png */; };
 		57CC0C542383CFB800D21659 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC0C532383CFB800D21659 /* UserInformationViewController.swift */; };
 		57CC0C562383D41600D21659 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC0C552383D41600D21659 /* userInfo.swift */; };
 		57F6442D235C0036007D2F03 /* ToDoListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F6442C235C0036007D2F03 /* ToDoListTableTableViewController.swift */; };
@@ -44,8 +49,13 @@
 
 /* Begin PBXFileReference section */
 		572049CA234E1C0700B3AFC2 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		5733AEB223867A4E007DC68C /* background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background1.jpg; path = ../../background1.jpg; sourceTree = "<group>"; };
-		5733AEB523869F07007DC68C /* touxiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = touxiang.png; path = ../../touxiang.png; sourceTree = "<group>"; };
+		5733AEB223867A4E007DC68C /* background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background1.jpg; sourceTree = "<group>"; };
+		5733AEB523869F07007DC68C /* touxiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touxiang.png; sourceTree = "<group>"; };
+		5793216223964502005EDAFB /* displayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayViewController.swift; sourceTree = "<group>"; };
+		5793216423964653005EDAFB /* rili.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rili.png; sourceTree = "<group>"; };
+		5793216523964653005EDAFB /* task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task.png; sourceTree = "<group>"; };
+		5793216623964653005EDAFB /* miaoshu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = miaoshu.png; sourceTree = "<group>"; };
+		5793216B239676C4005EDAFB /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white.png; path = ../../../../../Downloads/white.png; sourceTree = "<group>"; };
 		57CC0C532383CFB800D21659 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		57CC0C552383D41600D21659 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		57F6442C235C0036007D2F03 /* ToDoListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +102,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5793216A2396757D005EDAFB /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				5733AEB223867A4E007DC68C /* background1.jpg */,
+				5793216623964653005EDAFB /* miaoshu.png */,
+				5793216423964653005EDAFB /* rili.png */,
+				5793216523964653005EDAFB /* task.png */,
+				5733AEB523869F07007DC68C /* touxiang.png */,
+				5793216B239676C4005EDAFB /* white.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
 		57FA774F2339F0E600EA727C = {
 			isa = PBXGroup;
 			children = (
@@ -115,11 +138,11 @@
 		57FA775A2339F0E600EA727C /* myProject */ = {
 			isa = PBXGroup;
 			children = (
-				5733AEB223867A4E007DC68C /* background1.jpg */,
-				5733AEB523869F07007DC68C /* touxiang.png */,
+				5793216A2396757D005EDAFB /* resource */,
 				57FA775B2339F0E600EA727C /* AppDelegate.swift */,
 				57FA775D2339F0E600EA727C /* ViewController.swift */,
 				57FA775F2339F0E600EA727C /* Main.storyboard */,
+				5793216223964502005EDAFB /* displayViewController.swift */,
 				57CC0C532383CFB800D21659 /* UserInformationViewController.swift */,
 				57FB2A22237CFB50006CC5F6 /* settingPageViewController.swift */,
 				57CC0C552383D41600D21659 /* userInfo.swift */,
@@ -256,11 +279,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5793216823964653005EDAFB /* task.png in Resources */,
 				57FA77662339F0EE00EA727C /* LaunchScreen.storyboard in Resources */,
+				5793216C239676C4005EDAFB /* white.png in Resources */,
 				57FA77632339F0EE00EA727C /* Assets.xcassets in Resources */,
 				57FA77612339F0E600EA727C /* Main.storyboard in Resources */,
+				5793216923964653005EDAFB /* miaoshu.png in Resources */,
 				5733AEB323867A4E007DC68C /* background1.jpg in Resources */,
 				5733AEB623869F08007DC68C /* touxiang.png in Resources */,
+				5793216723964653005EDAFB /* rili.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				572049CB234E1C0700B3AFC2 /* ScheduleViewController.swift in Sources */,
+				5793216323964502005EDAFB /* displayViewController.swift in Sources */,
 				57FA775E2339F0E600EA727C /* ViewController.swift in Sources */,
 				57CC0C542383CFB800D21659 /* UserInformationViewController.swift in Sources */,
 				57F6442F235C00CB007D2F03 /* DetailOfThingsViewController.swift in Sources */,

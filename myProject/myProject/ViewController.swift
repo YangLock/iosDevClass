@@ -287,12 +287,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         else
         {
-            let detailVC = segue.destination as! DetailOfThingsViewController
+            let detailVC = segue.destination as! displayViewController
             if let selectedCell = sender as? UITableViewCell
             {
                 let indexPath = TableView.indexPath(for: selectedCell)!
                 let selectedTask = taskListOfSelect[(indexPath as NSIndexPath).row]
-                detailVC.taskEdit = selectedTask
+                detailVC.displayTask = selectedTask
             }
         }
     }
