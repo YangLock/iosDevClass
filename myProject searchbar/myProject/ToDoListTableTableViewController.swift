@@ -57,13 +57,14 @@ class ToDoListTableTableViewController: UIViewController,UISearchBarDelegate,UIT
             {
                 if let selectedIndexPath = tableView.indexPathForSelectedRow
                 {
-                    taskList[(selectedIndexPath as NSIndexPath).row] = addTask
+                    taskList[result[(selectedIndexPath as NSIndexPath).row]] = addTask
                     tableView.reloadRows(at: [selectedIndexPath], with: .none)
                 }
                 else
                 {
                     taskList.append(addTask)
                     let newIndexPath = IndexPath(row: taskList.count - 1, section: 0)
+                    result = [Int](0..<taskList.count)
                     tableView.insertRows(at: [newIndexPath], with: .automatic)
                 }
             }
@@ -123,6 +124,7 @@ class ToDoListTableTableViewController: UIViewController,UISearchBarDelegate,UIT
         if editingStyle == .delete {
             // Delete the row from the data source
             taskList.remove(at: indexPath.row)
+            result = [Int](0..<taskList.count)
             saveTaskFile()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
