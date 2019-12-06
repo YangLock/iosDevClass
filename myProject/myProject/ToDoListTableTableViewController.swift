@@ -60,13 +60,14 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
             {
                 if let selectedIndexPath = tableView.indexPathForSelectedRow
                 {
-                    taskList[(selectedIndexPath as NSIndexPath).row] = addTask
+                    taskList[searchResult[(selectedIndexPath as NSIndexPath).row]] = addTask
                     tableView.reloadRows(at: [selectedIndexPath], with: .none)
                 }
                 else
                 {
                     taskList.append(addTask)
                     let newIndexPath = IndexPath(row: taskList.count - 1, section: 0)
+                    searchResult = [Int](0..<taskList.count)
                     tableView.insertRows(at: [newIndexPath], with: .automatic)
                 }
             }
@@ -123,6 +124,7 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
         if editingStyle == .delete {
             // Delete the row from the data source
             taskList.remove(at: indexPath.row)
+            searchResult = [Int](0..<taskList.count)
             saveTaskFile()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -130,6 +132,7 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
         }    
     }
     
+    // 搜索功能的实现
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
     {
         if searchText == ""
