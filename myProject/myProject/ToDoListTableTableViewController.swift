@@ -144,7 +144,12 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
             searchResult = []
             for index in 0..<taskList.count
             {
+                /*
                 if (taskList[index].taskName?.lowercased().hasPrefix(searchText.lowercased()))!
+                {
+                    searchResult.append(index)
+                }*/
+                if (taskList[index].taskName?.lowercased().contains(searchText.lowercased()))!
                 {
                     searchResult.append(index)
                 }
