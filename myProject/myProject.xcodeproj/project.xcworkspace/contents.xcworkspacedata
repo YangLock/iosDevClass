@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/victor/Desktop/iosDev/myProject/myProject/touxiang.png">
-   </FileRef>
-   <FileRef
-      location = "group:../../touxiang.png">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

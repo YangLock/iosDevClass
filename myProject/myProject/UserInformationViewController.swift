@@ -21,14 +21,16 @@ class UserInformationViewController: UIViewController, UINavigationControllerDel
     {
         super.viewDidLoad()
         
-        if userEdit == nil{
+        if userEdit == nil
+        {
             
-        }else{
-            
+        }
+        else
+        {
             self.avatar.image = userEdit?.userAvatar
             self.nickName.text = userEdit?.userName
-        
         }
+        
         self.avatar.layer.cornerRadius = self.avatar.frame.height / 2
         self.avatar.layer.masksToBounds = true
         // Do any additional setup after loading the view.
@@ -54,20 +56,13 @@ class UserInformationViewController: UIViewController, UINavigationControllerDel
     }
     
     // 点击图片的手势操作
-    @IBAction func tapPhoto(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
-    }
-    /*@IBAction func tapPhoto(_ sender: Any)
+    @IBAction func tapPhoto(_ sender: Any)
     {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
- */
     
 
     
