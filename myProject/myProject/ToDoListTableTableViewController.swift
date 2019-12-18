@@ -8,15 +8,12 @@
 
 import UIKit
 
-class ToDoListTableTableViewController: UITableViewController, UISearchBarDelegate
-{
-    
+class ToDoListTableTableViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource{
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var searchResult = [Int]()  // 一个索引数组，用来存放匹配成功的cell的索引
-    
     var taskList = [Task]()
-    
+    var searchResult = [Int]()
     // initialize the task list
     func initTaskList()
     {
@@ -78,10 +75,13 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         initTaskList()
-        
+        //搜索内容为空时 显示全部内容
         searchResult = [Int](0..<taskList.count)
         searchBar.delegate = self
-        searchBar.placeholder = "搜索"
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        self.searchBar.placeholder = "搜索"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -91,18 +91,18 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return searchResult.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
 
         // Configure the cell...
@@ -120,7 +120,7 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
 
     
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             taskList.remove(at: indexPath.row)
@@ -132,46 +132,6 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
         }    
     }
     
-    // 搜索功能的实现
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
-    {
-        if searchText == ""
-        {
-            searchResult = [Int](0..<taskList.count)
-        }
-        else
-        {
-            searchResult = []
-            for index in 0..<taskList.count
-            {
-                /*// 用字符串前缀进行匹配
-                if (taskList[index].taskName?.lowercased().hasPrefix(searchText.lowercased()))!
-                {
-                    searchResult.append(index)
-                }*/
-                
-                // 查找字符串中是否含有某一特定字符串的方式，进行匹配
-                if (taskList[index].taskName?.lowercased().contains(searchText.lowercased()))!
-                {
-                    searchResult.append(index)
-                }
-            }
-        }
-        
-        tableView.reloadData()
-    }
-    
-    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) // 当点击时，不做任何事情
-    {
-        print("搜索历史")
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)  // 当取消点击时，搜索内容置空，重新初始化索引数组
-    {
-        searchBar.text = ""
-        searchResult = [Int](0..<taskList.count)
-        tableView.reloadData()
-    }
 
     /*
     // Override to support rearranging the table view.
@@ -201,5 +161,37 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
             detailVC.taskEdit = selectedTask
         }
     }
-
+    
+    //搜索功能实现
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //没有输入内容时显示全部内容
+        if searchText == "" {
+            self.searchResult = [Int](0..<taskList.count)
+        }else{
+            //匹配输入内容,不区分大小写
+            self.searchResult = []
+            for index in 0..<taskList.count{
+                /*
+                 if (taskList[index].taskName?.lowercased().hasPrefix(searchText.lowercased()))!{
+                    self.searchResult.append(index)
+                }
+                 */
+                if ((taskList[index].taskName?.lowercased().contains(searchText.lowercased()))!){
+                    searchResult.append(index)
+                }
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        print("搜索历史")
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        //搜索内容置空
+        searchBar.text = ""
+        searchResult = [Int](0..<taskList.count)
+        self.tableView.reloadData()
+    }
 }

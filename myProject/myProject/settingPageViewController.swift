@@ -63,16 +63,13 @@ class settingPageViewController: UIViewController
         super.viewDidLoad()
         initUserInfo()
         
-        if user == nil
-        {
+        if user == nil{
             
-        }
-        else
-        {
+        }else{
             UserInfoAvatar.image = user?.userAvatar
             UserInfoNickName.text = user?.userName
         }
-        
+
         themeView.layer.cornerRadius = 10
         themeView.layer.borderWidth = 1
         themeView.layer.borderColor = UIColor.lightGray.cgColor

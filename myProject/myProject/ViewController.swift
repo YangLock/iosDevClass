@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     
     @IBOutlet weak var calendar: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var TableView: UITableView!
-    
+
     @IBAction func addTask(_ sender: Any)
     {
         self.performSegue(withIdentifier: "addTask", sender: self)
