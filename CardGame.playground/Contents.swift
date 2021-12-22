@@ -1,5 +1,5 @@
 /*:
- ## Two functions for automatically discard and randomly choose a card
+ ## Two functions for automatically discarding and randomly choosing a card
  - **chooseOne** is a function which can randomly choose a card
  - **autoDiscard** is a function which can automatically discard
 */
@@ -41,8 +41,8 @@ func autoDiscard(numOfPlayers: Int, numOfCards: Int) -> [[(num: Int, color: Stri
     return cardsOfPlayers
 }
 
-autoDiscard(numOfPlayers: 5, numOfCards: 4)
-for i in 0..<5 {
+autoDiscard(numOfPlayers: 4, numOfCards: 9)
+for i in 0..<4 {
     print(cardsOfPlayers[i])
 }
 

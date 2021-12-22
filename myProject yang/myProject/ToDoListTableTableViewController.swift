@@ -144,11 +144,13 @@ class ToDoListTableTableViewController: UITableViewController, UISearchBarDelega
             searchResult = []
             for index in 0..<taskList.count
             {
-                /*
+                /*// 用字符串前缀进行匹配
                 if (taskList[index].taskName?.lowercased().hasPrefix(searchText.lowercased()))!
                 {
                     searchResult.append(index)
                 }*/
+                
+                // 查找字符串中是否含有某一特定字符串的方式，进行匹配
                 if (taskList[index].taskName?.lowercased().contains(searchText.lowercased()))!
                 {
                     searchResult.append(index)
